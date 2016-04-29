@@ -10,9 +10,11 @@
       <input type="text" name="cantidad" />
       <input type="submit" value="validar" />
     </form>
+      <h1>Bienvenido, cantidad a apostar es <%= session["cantidad"] %></h1>
     <hr>
       <form  action="/valida" method="post">
         <select  name="numero">
+          <option value="0">Elige numero</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>

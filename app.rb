@@ -14,7 +14,7 @@ end
 post '/calcular' do
   cantidad = Cantidad.new
   session["cantidad"] = cantidad.validaCantidad params["cantidad"]
-  erb :calcular
+  erb :index
 end
 
 post '/valida' do
