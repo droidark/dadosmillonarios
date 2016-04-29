@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/cantidad'
+require './lib/apuesta'
 
 enable :sessions
 
@@ -23,6 +24,7 @@ post '/valida' do
 end
 
 post '/tirar' do
-  session['resultado']=2
-  erb :resultado
+  apuesta=Apuesta.new
+  session['resultado']=apuesta.tirarDados true
+  erb :index
 end
