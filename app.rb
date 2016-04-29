@@ -3,7 +3,7 @@ require './lib/cantidad'
 require './lib/apuesta'
 
 enable :sessions
-
+#use Rack::Session::Pool, :expire_after=>259200
 get '/' do
   erb :index
 end
@@ -24,7 +24,9 @@ post '/valida' do
 end
 
 post '/tirar' do
+  puts session['numero']
   apuesta=Apuesta.new
-  session['resultado']=apuesta.tirarDados true
+  session['resultado']=apuesta.tirarDados false
+  session['statusGame'] = apuesta.validarPartida session['resultado'], session['numero']
   erb :index
 end

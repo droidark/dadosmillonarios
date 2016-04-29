@@ -8,7 +8,7 @@
     <h1>Dados Millonarios</h1>
     <form method="post" action="/calcular">
       <input type="text" name="cantidad"  align=center/>
-      <input type="submit" value="apostar" align=center/>
+      <input type="submit" value="validar" align=center/>
     </form>
       <h2>Bienvenido, cantidad a apostar es <%= session["cantidad"] %></h2>
     <hr>
@@ -29,7 +29,11 @@
         <br>
         <input type="submit" name="elegir" value="Elegir" align=center>
       </form>
+
       <h2 align=center><%= session['numero']%> <h2>
+
+        <h1><%= session['statusGame']%> <h1>
+
       </br>
       <hr>
         <form  action="/tirar" method="post">
