@@ -4,7 +4,7 @@ require './lib/cantidad'
 enable :sessions
 
 get '/' do
-  erb :inicio
+  erb :index
 end
 
 get '/inicio' do
@@ -15,10 +15,8 @@ post '/calcular' do
   cantidad = Cantidad.new
   session["cantidad"] = cantidad.validaCantidad params["cantidad"]
   erb :calcular
-enable :sessions
-get '/' do
-  erb :index
 end
+
 post '/valida' do
   session['numero'] = params['numero']
   erb :index

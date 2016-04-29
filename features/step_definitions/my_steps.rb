@@ -1,5 +1,5 @@
 Given(/^inicia la aplicacion$/) do
-  visit '/inicio'
+  visit '/'
 end
 
 When(/^ingreso "(.*?)"$/) do |cantidad|
@@ -13,12 +13,12 @@ end
 
 When(/^selecciona un "(.*?)"$/) do |text|
   select(text,:form=>'numero')
-
 end
 
 When(/^haga click$/) do
   click_button('elegir')
 end
+
 Then(/^debo ver "(.*?)"$/) do |text|
   last_response.body.should =~ /#{text}/m
 end

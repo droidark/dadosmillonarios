@@ -5,6 +5,12 @@
     <title></title>
   </head>
   <body>
+    <h2>Dados Millonarios</h2>
+    <form method="post" action="/calcular">
+      <input type="text" name="cantidad" />
+      <input type="submit" value="validar" />
+    </form>
+    <hr>
       <form  action="/valida" method="post">
         <select  name="numero">
           <option value="2">2</option>
@@ -24,7 +30,7 @@
       <h1><%= session['numero']%> <h1>
       </br>
         <form  action="/tirar" method="post">
-          <input type="submit" name="tirar" value="Tirar dados">          
+          <input type="submit" name="tirar" value="Tirar dados">
         </form>
   </body>
 </html>
