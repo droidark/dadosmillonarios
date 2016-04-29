@@ -1,8 +1,9 @@
 require 'sinatra'
 require './lib/cantidad'
+require './lib/apuesta'
 
 enable :sessions
-
+#use Rack::Session::Pool, :expire_after=>259200
 get '/' do
   erb :index
 end
@@ -23,6 +24,8 @@ post '/valida' do
 end
 
 post '/tirar' do
-  session['resultado']=2
+  numero = Apuesta.new
+  session['resultado'] = numero.tirarDados  false
+  session['statusGame'] = numero.validarPartida session['resultado']
   erb :resultado
 end
