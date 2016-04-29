@@ -13,3 +13,9 @@ end
 Then(/^debo ver "(.*?)"$/) do |text|
   last_response.body.should =~ /#{text}/m
 end
+
+When(/^haga click en tirar dados$/) do
+
+  click_button('tirar')
+  
+end
