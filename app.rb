@@ -28,5 +28,6 @@ post '/tirar' do
   apuesta=Apuesta.new
   session['resultado']=apuesta.tirarDados false
   session['statusGame'] = apuesta.validarPartida session['resultado'], session['numero']
+  session['saldo']=1000
   erb :index
 end
